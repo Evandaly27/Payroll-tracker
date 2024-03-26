@@ -8,9 +8,15 @@ const collectEmployees = function() {
 
   // prompt user to type in data for the employees
   while (true) {
-    const firstName = prompt("Enter first name:");
+    let firstName = prompt("Enter first name:");
 
-    if (firstName.toLowerCase() === 'done') {
+    if (firstName === null) {
+      break;
+    }
+
+    firstName = String(firstName).toLowerCase();
+
+    if (firstName === 'done') {
       break;
     }
 
@@ -23,7 +29,9 @@ const collectEmployees = function() {
       lastName: lastName,
       salary: salary
     });
-  }
+  };
+
+
 
   return employees;
 }
@@ -31,19 +39,24 @@ const collectEmployees = function() {
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-const displayAverageSalary = function(employeesArray) {
+
   const totalSalary = employeesArray.reduce((acc, employee) => acc + employee.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
 
-  alert(`Average Salary: $${averageSalary.toFixed(2)}`);
+  console.log(`Average Salary: $${averageSalary.toFixed(2)}`);
 }
 
-}
+
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-}
+  
+    const randomIndex = Math.floor(Math.random() * employeesArray.length);
+    const randomEmployee = employeesArray[randomIndex];
+
+    alert(`Random Employee:\nName: ${randomEmployee.firstName} ${randomEmployee.lastName}\nSalary: $${randomEmployee.salary.toFixed(2)}`);
+  }
 
 /*
   ====================
