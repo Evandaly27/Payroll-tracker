@@ -14,8 +14,6 @@ const collectEmployees = function() {
       break;
     }
 
-    firstName = String(firstName).toLowerCase();
-
     if (firstName === 'done') {
       break;
     }
@@ -55,7 +53,7 @@ const getRandomEmployee = function(employeesArray) {
     const randomIndex = Math.floor(Math.random() * employeesArray.length);
     const randomEmployee = employeesArray[randomIndex];
 
-    alert(`Random Employee:\nName: ${randomEmployee.firstName} ${randomEmployee.lastName}\nSalary: $${randomEmployee.salary.toFixed(2)}`);
+    console.log(`Congrats to:\nName: ${randomEmployee.firstName} ${randomEmployee.lastName}\nSalary: $${randomEmployee.salary.toFixed(2)}`);
   }
 
 /*
